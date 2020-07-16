@@ -23,6 +23,10 @@ To create an API serving /order?customerNo=12345 we need to configure as:
 ```
 
 Then the APIMocker needs to be executed.
+![Running the API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/Running%20the%20APIMocker.png?raw=true)
+
+It's how it looks:
+![API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/APIMocker%20at%20work.png?raw=true)
 
 ## API Consumer
 The Second part is just a simple API application which is going to consume this application. It's an API application itself but can be a Web application or a background service or anything else.
@@ -52,3 +56,9 @@ if (response.IsSuccessStatusCode)
 }
 
 ```
+Then we can run the API application
+![Running the API consumer](https://github.com/mkokabi/pe-nation/blob/master/images/Running%20the%20API%20consumer.png?raw=true)
+
+It's how it looks:
+![API Consumer](https://github.com/mkokabi/pe-nation/blob/master/images/API%20application%20consuming%20the%20Mock%20.png?raw=true)
+
