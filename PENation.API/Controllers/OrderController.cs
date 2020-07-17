@@ -44,7 +44,12 @@ namespace PENation.API.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var responseContent = await response.Content.ReadAsStringAsync();
-                var orders = JsonSerializer.Deserialize<IEnumerable<Order>>(responseContent);
+                var jsonOptions = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                };
+
+                var orders = JsonSerializer.Deserialize<IEnumerable<Order>>(responseContent, jsonOptions);
                 return orders;
             }
             else
