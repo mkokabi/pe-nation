@@ -60,5 +60,5 @@ Then we can run the API application
 ![Running the API consumer](https://github.com/mkokabi/pe-nation/blob/master/images/Running%20the%20API%20consumer.png?raw=true)
 
 It's how it looks:
-![API Consumer](https://github.com/mkokabi/pe-nation/blob/master/images/API%20application%20consuming%20the%20Mock%20.png?raw=true)
+![API Consumer](https://github.com/mkokabi/pe-nation/blob/master/images/API%20application%20consuming%20the%20Mock.png?raw=true)
 
