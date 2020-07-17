@@ -1,9 +1,23 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PENation.API", "PENation.API\PENation.API.csproj", "{BAD84CAE-5701-48E8-8588-59342FCEF665}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PENation.API", "PENation.API\PENation.API.csproj", "{BAD84CAE-5701-48E8-8588-59342FCEF665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIMocker", "APIMocker\APIMocker.csproj", "{D6233D9D-E6CB-4129-9290-9E3E59A98320}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIMocker", "APIMocker\APIMocker.csproj", "{D6233D9D-E6CB-4129-9290-9E3E59A98320}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{BBE2B62E-87F6-45F4-8218-4120427D96FD}"
+	ProjectSection(SolutionItems) = preProject
+		images\API application consuming the Mock .png = images\API application consuming the Mock .png
+		images\APIMocker at work.png = images\APIMocker at work.png
+		images\Running the API consumer.png = images\Running the API consumer.png
+		images\Running the APIMocker.png = images\Running the APIMocker.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26D78B8D-CD15-4812-B9BC-40E10BFD46F1}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,5 +33,11 @@ Global
 		{D6233D9D-E6CB-4129-9290-9E3E59A98320}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6233D9D-E6CB-4129-9290-9E3E59A98320}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6233D9D-E6CB-4129-9290-9E3E59A98320}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E7921D7-C87B-4CEF-B037-3C07764787A0}
 	EndGlobalSection
 EndGlobal
