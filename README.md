@@ -22,6 +22,12 @@ To create an API serving /order?customerNo=12345 we need to configure as:
   },
 ```
 
+The QueryString can be even replaced with 
+```json
+    "QueryString": "?customerNo={0}",
+```
+to support other values of customerNo.
+
 Then the APIMocker needs to be executed.
 ![Running the API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/Running%20the%20APIMocker.png?raw=true)
 
