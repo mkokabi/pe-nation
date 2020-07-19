@@ -48,7 +48,7 @@ namespace APIMocker
                 var queryString = request.QueryString.Value;
                 var response = context.HttpContext.Response;
                 if (path.Equals(APIDetailOptions.Path, StringComparison.OrdinalIgnoreCase) &&
-                    queryString.Equals(APIDetailOptions.QueryString, StringComparison.OrdinalIgnoreCase))
+                    QueryStringChecker.Match(APIDetailOptions.QueryString, queryString))
                 {
                     response.StatusCode = APIDetailOptions.StatusCode;
                     var stream = response.Body;
