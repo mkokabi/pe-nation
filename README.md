@@ -14,12 +14,13 @@ The configuration is only one tag *APIDetail* which contains following elements:
 To create an API serving /order?customerNo=12345 we need to configure as:
 
 ``` json
-  "APIDetail": {
+  "APIDetail": [
+  {
     "Path": "/Order",
     "QueryString": "?customerNo=12345",
     "StatusCode": 200,
     "ResponseBody": "[{\"orderNumber\":\"23\",\"orderDate\":\"2020-07-01T06:57:53.917141+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"10\",\"orderDate\":\"2020-07-14T06:57:53.917435+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"7\",\"orderDate\":\"2020-07-08T06:57:53.917443+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"-9\",\"orderDate\":\"2020-07-14T06:57:53.917444+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"9\",\"orderDate\":\"2020-06-27T06:57:53.917468+10:00\",\"orderStatus\":\"Order\"}]"
-  },
+  }],
 ```
 
 The QueryString can be even replaced with 
@@ -27,6 +28,25 @@ The QueryString can be even replaced with
     "QueryString": "?customerNo={0}",
 ```
 to support other values of customerNo.
+
+### multiple API
+If we have more than one APIDetail they should be ordered based on more specific first.
+```json
+  "APIDetail": [
+    {
+      "Path": "/Order",
+      "QueryString": "?customerNo={0}&date={1}",
+      "StatusCode": 200,
+      "ResponseBody": "[{\"orderNumber\":\"23\",\"orderDate\":\"2020-07-01T06:57:53.917141+10:00\",\"orderStatus\":\"Order\"}]"
+    },
+    {
+      "Path": "/Order",
+      "QueryString": "?customerNo={0}",
+      "StatusCode": 200,
+      "ResponseBody": "[{\"orderNumber\":\"23\",\"orderDate\":\"2020-07-01T06:57:53.917141+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"10\",\"orderDate\":\"2020-07-14T06:57:53.917435+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"7\",\"orderDate\":\"2020-07-08T06:57:53.917443+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"-9\",\"orderDate\":\"2020-07-14T06:57:53.917444+10:00\",\"orderStatus\":\"Order\"},{\"orderNumber\":\"9\",\"orderDate\":\"2020-06-27T06:57:53.917468+10:00\",\"orderStatus\":\"Order\"}]"
+    }
+  ],
+```
 
 Then the APIMocker needs to be executed.
 ![Running the API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/Running%20the%20APIMocker.png?raw=true)
