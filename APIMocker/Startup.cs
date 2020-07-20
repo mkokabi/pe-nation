@@ -25,7 +25,7 @@ namespace APIMocker
 
         public IConfiguration Configuration { get; }
 
-        public static APIDetailOptions APIDetailOptions { get; set; } = new APIDetailOptions();
+        public static List<APIDetailOptions> APIDetailOptions { get; set; } = new List<APIDetailOptions>();
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -47,12 +47,14 @@ namespace APIMocker
                 var path = request.Path.Value;
                 var queryString = request.QueryString.Value;
                 var response = context.HttpContext.Response;
-                if (path.Equals(APIDetailOptions.Path, StringComparison.OrdinalIgnoreCase) &&
-                    QueryStringChecker.Match(APIDetailOptions.QueryString, queryString))
+                var match = APIDetailOptions.FirstOrDefault(opt =>
+                    path.Equals(opt.Path, StringComparison.OrdinalIgnoreCase) &&
+                    QueryStringChecker.Match(opt.QueryString, queryString));
+                if (match != null)
                 {
-                    response.StatusCode = APIDetailOptions.StatusCode;
+                    response.StatusCode = match.StatusCode;
                     var stream = response.Body;
-                    await stream.WriteAsync(Encoding.UTF8.GetBytes(APIDetailOptions.ResponseBody));
+                    await stream.WriteAsync(Encoding.UTF8.GetBytes(match.ResponseBody));
                 }
             });
 
