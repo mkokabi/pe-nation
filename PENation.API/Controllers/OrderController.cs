@@ -32,7 +32,7 @@ namespace PENation.API.Controllers
         public async Task<IEnumerable<Order>> GetAsync(int customerNo)
         {
             var client = _clientFactory.CreateClient();
-            var orderApiUrl = _configuration["OrderApiUrl"];
+            var orderApiUrl = $"{_configuration["OrderApiUrl"]}/order?customerNo={customerNo}";
 
             client.DefaultRequestHeaders
               .Accept
