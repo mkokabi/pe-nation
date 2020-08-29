@@ -52,6 +52,8 @@ Then the APIMocker needs to be executed.
 ![Running the API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/Running%20the%20APIMocker.png?raw=true)
 
 It's how it looks:
+MockAPI Welcome page
+![API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/MockAPI%20Welcome%20page.png?raw=true)
 ![API mocker](https://github.com/mkokabi/pe-nation/blob/master/images/APIMocker%20at%20work.png?raw=true)
 
 ## API Consumer
